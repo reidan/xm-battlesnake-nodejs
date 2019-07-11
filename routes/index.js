@@ -1,7 +1,7 @@
 var express = require('express');
 var router  = express.Router();
 
-var snakeCounter = 1;
+// var snakeCounter = 1;
 
 const SOLO_MODE = 'SOLO';
 const H2H_MODE = 'H2H';
@@ -15,7 +15,7 @@ router.post('/start', function (req, res) {
   // Response data
   var data = {
     color: "#6a6676",
-    name: "Popped Collars 4 Life" + snakeCounter++,
+    name: "Popped Collars 4 Life",
     head_url: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Enl_popped.jpg", // optional, but encouraged!
     taunt: "You don't know me!", // optional, but encouraged!
     head_type: "shades",
@@ -54,7 +54,7 @@ router.post('/move', function (req, res) {
    console.log("availableMoves: " + JSON.stringify(availableMoves));
 
    let foodTarget = gameState.food[0];
-   if (H2H_MODE) {
+   if (mode === H2H_MODE) {
     var opponent = getOtherSnake(gameState);
     if (opponent) {
       if (mySnake.coords.length > opponent.coords.length) {
