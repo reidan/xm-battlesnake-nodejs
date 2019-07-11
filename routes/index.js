@@ -14,10 +14,12 @@ router.post('/start', function (req, res) {
  console.log(req.body)
   // Response data
   var data = {
-    color: "#006676",
+    color: "#6a6676",
     name: "Popped Collars 4 Life" + snakeCounter++,
     head_url: "https://upload.wikimedia.org/wikipedia/commons/5/5e/Enl_popped.jpg", // optional, but encouraged!
     taunt: "You don't know me!", // optional, but encouraged!
+    head_type: "shades",
+    tail_type: "curled",
   }
 
   return res.json(data)
